@@ -1,0 +1,16 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <input type="text" id="user">
+    <script>
+      function sayHello() {
+        var x = document.getElementById("user").value;
+        document.getElementById("display").innerHTML = "Hello " + x;
+      }
+    </script>
+    <h1 id="display"></h1>
+    <button onclick="sayHello()">Submit</button>
+  </body>
+</html>
