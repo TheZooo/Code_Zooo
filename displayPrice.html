@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script>
+      var thing = {
+        name: "Something",
+        price: 5
+      };
+      function buyMe() {
+        var qty = document.getElementById("askQty").value;
+        var total = ((qty * thing.price) * 1.04172).toFixed(2);
+        document.getElementById("askQty").value = "";
+        document.getElementById("display").innerHTML = "You owe " + "$" +total;
+        
+      }
+    </script>
+  </head>
+  
+  <body>
+    <input type="integer" id="askQty">
+    <button onclick="buyMe()">Buy</button>
+    <p id="display"></p>
+  </body>
+  
+</html>
