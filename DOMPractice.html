@@ -7,6 +7,7 @@
     <script>
       function sayHello() {
         var x = document.getElementById("user").value;
+        document.getElementById("user").value = "";
         document.getElementById("display").innerHTML = "Hello " + x;
       }
     </script>
