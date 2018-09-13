@@ -1,0 +1,60 @@
+body {
+  background:url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/B1eYNZGrripnnry82/videoblocks-table-at-restaurant-blurred-background_rxthbuitx_thumbnail-full01.png");
+  background-size:cover;
+}
+h1 {
+  font-size:60px;
+  margin-left:20px;
+  color:#161616;
+  text-shadow:0 0 10px white;
+}
+p {
+  font-size:20px;
+  font-weight:bold;
+  line-height:15px;
+  color:black;
+  text-shadow:0 0 5px white;
+  margin-left:15px;
+}
+button {
+  margin-left:15px;
+}
+.order {
+  height:40vh;
+  width:20vw;
+  margin-left:20px;
+  border-style:solid;
+  border-width:2px;
+  box-shadow:0 0 10px white;
+  float:left;
+}
+#ordrOne {
+  background:url("https://d2gk7xgygi98cy.cloudfront.net/384-3-large.jpg");/*#74f442;*/
+  background-size:cover;
+}
+#ordrTwo {
+  background:url("https://topsecretrecipes.com/images/product/mcdonalds-filet-o-fish-copycat-recipe.jpg");/*#ffff42;*/
+  background-size:cover;
+}
+#ordrTre {
+  background:url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rN0W64K4ipau8gxv/dark-gray-background-soft-fifteen-shades-of-grey-smooth-background-with-the-addition-of-a-bit-of-noise_r4cmgqcfl_thumbnail-full01.png");/*#a3a3a3;*/
+  background-size:cover;
+}
+#priceBox {
+  height:10vh;
+  width:40vw;
+  margin-left:20px;
+  margin-top:20px;
+  border-style:solid;
+  border-width:2px;
+  box-shadow:0 0 10px white;
+  background:url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rN0W64K4ipau8gxv/light-gray-background-soft-fifteen-shades-of-grey-smooth-background-with-the-addition-of-a-bit-of-noise_r4_eswq9yx_thumbnail-full01.png");/*#a3a3a3;*/
+  background-size:cover;
+  float:left;
+}
+#total {
+  font-size:30px;
+  line-height:5px;
+  text-decoration:underline;
+  margin-left:15px;
+}
