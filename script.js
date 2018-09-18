@@ -10,7 +10,7 @@ var fshBurger = {
   name: "Fish Burger",
   meat: "Fishy Fish",
   grown: ["Lettuce", "Coleslaw"],
-  sauce: "Drop of Lemon Juice",
+  sauce: "Drops of Lemon Juice",
   qty: 22,
   price: 6.25
 };
@@ -32,21 +32,22 @@ function onStart() {
   document.getElementById("total").innerHTML = "Total:";
 }
 
+var tax = 0.04712;
 function buyOne() {
   var bb = document.getElementById("numBuyOne").value;
   if (burger.qty > 1 && bb <= burger.qty) {
     burger.qty = burger.qty - bb;
     document.getElementById("bq").innerHTML = burger.qty + " Available";
-    x = (burger.price + (burger.price * 0.04712)).toFixed(2);
-    y = y + (Number(x) * bb);
+    x = (burger.price + (burger.price * tax));
+    y = y + x * bb;
     document.getElementById("numBuyOne").value = 0;
     document.getElementById("total").innerHTML = "Total: " + "$" + y.toFixed(2);
   }
-  else if (burger.qty < 1) {
-    document.getElementById("bq").innerHTML = "None Available";
-  }
   else {
     document.getElementById("numBuyOne").value = 0;
+  }
+  if (burger.qty < 1) {
+    document.getElementById("bq").innerHTML = "None Available";
   }
 }
 
@@ -55,15 +56,15 @@ function buyTwo() {
   if (fshBurger.qty > 1 && fb <= fshBurger.qty) {
     fshBurger.qty = fshBurger.qty - fb;
     document.getElementById("fq").innerHTML = fshBurger.qty + " Available";
-    x = (fshBurger.price + (fshBurger.price * 0.04712)).toFixed(2);
-    y = y + Number(x) * fb;
+    x = (fshBurger.price + (fshBurger.price * tax));
+    y = y + x * fb;
     document.getElementById("numBuyTwo").value = 0;
     document.getElementById("total").innerHTML = "Total: " + "$" + y.toFixed(2);
   }
-  else if (fshBurger.qty <= 1) {
-    document.getElementById("fq").innerHTML = "None Available";
-  }
   else {
     document.getElementById("numBuyTwo").value = 0;
+  }
+  if (fshBurger.qty <= 1) {
+    document.getElementById("fq").innerHTML = "None Available";
   }
 }
