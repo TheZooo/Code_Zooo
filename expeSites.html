@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script>
+      var x = ["http://www.hellochar.com/flame", "https://soniaboller.github.io/geometric-tuneage/", "https://paveldogreat.github.io/WebGL-Fluid-Simulation/", "https://rayyayyar.github.io/bart-flow/", "https://konard.github.io/twittermatrix/messages.html", "https://xviniette.github.io/FlappyLearning/" ];
+      function bring() {
+        var y = Math.floor(Math.random() * x.length);
+        var z = x[y];
+        document.getElementById('link').innerHTML = "<a href=" + z + " target='_blank'>Click Here</a>";
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="bring()">Bring me somewhere</button>
+    <p> Sites come from Chrome Experiments.</p>
+    <p id="link"></p>
+  </body>
+</html>
