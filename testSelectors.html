@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+      .pa {
+        width:50px;
+        height:50px;
+        background-color:red;
+        animation-name:wow;
+        animation-duration:2s;
+        animation-iteration-count:infinite;
+        animation-play-state:paused;
+      }
+      @keyframes wow {
+        50% {transform:translateX(100px);}
+        100% {transform:translateX(0);}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pa">Zero</div>
+    <div class="pa">One</div>
+    <div class="pa">Two</div>
+    <div class="pa">Three</div>
+    <div class="pa">Four</div>
+    <div class="pa">Five</div>
+    <div class="pa">Six</div>
+    <button onclick="replace()">Replace the first</button>
+    <p id="na"></p>
+    <script>
+      var z = document.getElementsByClassName('pa').length
+      function replace() {
+        var rand = Math.floor(Math.random() * z);
+        document.getElementsByClassName('pa')[rand].style.animationPlayState = "running";
+      }
+    </script>
+  </body>
+</html>
