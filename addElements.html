@@ -1,0 +1,20 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <button onclick="addP()">Add Paragraph</button>
+    <ul>
+      <li>THE FIRST</li>
+    </ul>
+    <script>
+    function addP() {
+      var tag = document.getElementsByTagName('ul')[0];
+      var newP = document.createElement('li');
+      var newT = document.createTextNode('THE BEST');
+      newP.appendChild(newT);
+      tag.appendChild(newP);
+      document.body.appendChild(tag);
+    }
+    </script>
+  </body>
+</html>
