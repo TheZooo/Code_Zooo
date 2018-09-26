@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <ul></ul>
+    <script>
+      var x = ["Apple", "Orange", "Grape", "Kiwi"];
+      var i;
+      for (i = 0; i < x.length; i++)  {
+        var appPen = document.createElement('li');
+        var pinePen = document.createTextNode(x[i]);
+        var uh = document.getElementsByTagName('ul')[0];
+        appPen.appendChild(pinePen);
+        uh.appendChild(appPen);
+      }
+    </script>
+  </body>
+</html>
