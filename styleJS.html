@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script>
+    var arr = [];
+      function add() {
+        var x = document.getElementById('clr').value;
+        arr.unshift(x);
+        x = document.getElementById('clr').value = "";
+      }
+      function chngBg() {
+        var rand = Math.floor(Math.random() * arr.length)
+        document.body.style.backgroundColor = arr[rand];
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="clr">
+    <button onclick="add()">Add Color (Hexadecimal)</button>
+    <button onclick="chngBg()">Change BG</button>
+  </body>
+</html>
