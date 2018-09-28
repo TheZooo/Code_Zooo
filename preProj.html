@@ -1,0 +1,35 @@
+<html>
+  
+  <body>
+    <ol></ol>
+    <select id="cdo"></select>
+    <button onclick="rmv()">Remove This</button>
+
+    <script>
+      var arr = ["Ketchup", "Mustard", "Mayo", "Relish"];
+      var select = document.getElementById('cdo');
+      function populate() {
+        for(var i = 0; i < arr.length; i++) {
+          var opt = i + 1;
+          var elem = document.createElement('option');
+          elem.textContent = opt; //1,2,3,4 set in innerHTML
+          elem.value = opt; //1,2,3,4 set value
+          select.appendChild(elem);
+          var li = document.createElement('li');
+          var newTxt = document.createTextNode(arr[i]);
+          li.appendChild(newTxt);
+          var ol = document.getElementsByTagName('ol')[0];
+          ol.appendChild(li);
+        }
+      }
+      function rmv() {
+        var sel = document.getElementById('cdo').value;
+        var li = document.getElementsByTagName('li')[sel - 1];
+        var na = li.parentNode;
+        na.removeChild(li);
+      }
+      populate();
+    </script>
+  </body>
+  
+</html>
