@@ -1,0 +1,26 @@
+<html>
+  
+  <body>
+    <p id="w">256</p>
+    <p id="o">256</p>
+    <p id="m">256</p>
+    <button onclick="m()">CHANGE COLOR</button>
+    <style>
+      p {
+        color:white;
+        text-shadow:0 0 4px black;
+      }
+    </style>
+    <script>
+      function m() {
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        document.body.style.backgroundColor = (r,g,b);
+        document.getElementById('w').innerHTML = r;
+        document.getElementById('o').innerHTML = g;
+        document.getElementById('m').innerHTML = b;
+      }
+    </script>
+  </body>
+</html>
