@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script>
+      var x = 0;
+      function inc() {
+        if (x > 50) {
+          document.getElementById('num').innerHTML = x + " too many";
+        }
+        else {
+          x = x + 1;
+          document.getElementById('num').innerHTML = x;
+        }
+      }
+      function dec() {
+        if (x === 0) {
+          x = 0;
+          document.getElementById('num').innerHTML = x;
+        }
+        else {
+          x = x - 1;
+          document.getElementById('num').innerHTML = x;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p id="num"></p>
+    <button onclick="inc()">Increment</button>
+    <button onclick="dec()">Decrement</button>
+  </body>
+</html>
