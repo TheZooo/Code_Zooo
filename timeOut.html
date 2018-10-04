@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <style>
+      h1 {
+        font-size:70px;
+      }
+      </style>
+    <script>
+      var x = ["BOOM", "CRASH", "POP", "SNAP", "CRACK", "SMACK"];
+      var y = ["red", "blue", "yellow", "purple", "gray", "green", "orange"];
+      function s() {
+        var randO = Math.floor(Math.random() * x.length);
+        var randT = Math.floor(Math.random() * y.length);
+        var randC = Math.floor(Math.random() * y.length);
+        if (randT === randC) {
+          randT = Math.floor(Math.random() * y.length);
+        }
+        else if(randT === randC) {
+          randT = Math.floor(Math.random() * y.length);
+        }
+        else{}
+          setTimeout(function() {
+            document.getElementById('dis').innerHTML = x[randO];
+            document.getElementById('dis').style.backgroundColor = y[randT];
+            document.getElementById('dis').style.color = y[randC];
+          }, 3000);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Click delayed by three seconds</p>
+    <h1 id="dis"></h1>
+    <button onclick="s()">Click</button>
+  </body>
+</html>
