@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script>
+      var x = 0;
+      var i;
+      var arr = [];
+      function strt() {
+        y = document.getElementsByTagName('li').length;
+        for (i = 0; i < y; i++) {
+          x = x + 1;
+          arr.push(x);
+        }
+      }
+    </script>
+  </head>
+  <body onload="strt()">
+    <ol>
+      <li onclick="on">Orange</li>
+      <li onclick="tw">Tangerine</li>
+      <li onclick="th">Potato</li>
+    </ol>
+    <ol>
+      <li onclick="fo">Lettuce</li>
+      <li onclick="fi">Tomato</li>
+      <li onclick="si">Cabbage</li>
+    </ol>
+    <button onclick="rmv()">Remove</button>
+  </body>
+</html>
