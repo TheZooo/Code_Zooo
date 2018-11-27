@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script>
+      var stuf = {};
+      var d = document;
+
+      function start() {
+        stuf["name"] = "Box";
+        stuf["price"] = "free";
+        stuf["contain"] = ["rusty tools", "webs", "old books"];
+        d.getElementById("nam").innerHTML = stuf.name;
+        d.getElementById("pri").innerHTML = stuf.price;
+        d.getElementById("con").innerHTML = stuf.contain;
+      }
+      
+      function addStuff() {
+        var x = document.getElementById("add").value;
+        stuf.contain.push(x);
+        d.getElementById("con").innerHTML = stuf.contain;
+        x = document.getElementById("add").value = "";
+      }
+    </script>
+  </head>
+  <body onload="start()">
+    <h1>Complex Arrays</h1>
+    <p id = "nam"></p>
+    <p id = "pri"></p>
+    <p id = "con"></p>
+    <input type="text" id="add">
+    <button id="bttn" onclick = "addStuff()">Put in Box</button>
+  </body>
+</html>
