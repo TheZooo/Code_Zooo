@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <script>
+      var box = {};
+      var d = document;
+        
+      function start() {
+        box["name"] = "Unnamed Box";
+        box["contain"] = [
+          {"layA": []},
+          {"layB": []}
+        ];
+        d.getElementById("nam").innerHTML = box.name;
+        d.getElementById("ins").innerHTML = "You see... " + "Nothing"
+      }
+      
+      function bttnA() {
+        box.name = d.getElementById("addName").value;
+        d.getElementById("nam").innerHTML = box.name + " Box";
+        d.getElementById("addName").value = "";
+      }
+      function bttnB() {
+        box.contain[0].layA.push(d.getElementById("addStuf").value);
+        d.getElementById("ins").innerHTML = "You see..." + box.contain[0].layA + " in one half";
+        d.getElementById("addStuf").value = "";
+      }
+      function bttnC() {
+        box.contain[1].layB.push(d.getElementById("addStuf").value);
+        d.getElementById("ina").innerHTML = "In addition to..." + box.contain[1].layB + " in other half";
+        d.getElementById("addStuf").value = "";
+      }
+    </script>
+    <style>
+      p {
+        font-size:40px;
+      }
+      input {
+        margin-top:4px;
+      }
+      button {
+        margin-top:4px;
+      }
+    </style>
+  </head>
+  <body onload="start()">
+    <p id="nam"></p>
+    <p id="ins"></p>
+    <p id="ina"></p>
+    <input type="text" id="addName">
+    <button onclick="bttnA()">Place Name Tag</button><br>
+    <input type="text" id="addStuf">
+    <button onclick="bttnB()">Put Thing 1st Layer</button>
+    <button onclick="bttnC()">Put Thing 2nd Layer</button>
+  </body>
+</html>
