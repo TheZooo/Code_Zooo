@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1 id="lookHere"></h1>
+    <script>
+      document.body.addEventListener('keypress',function(userChoice) {
+        var key = userChoice.keyCode;
+        document.getElementById('lookHere').innerHTML = key;
+        if (key == 13) {
+          document.getElementById('lookHere').innerHTML = "enter";
+        }
+        });
+        
+    </script>
+  </body>
+</html>
