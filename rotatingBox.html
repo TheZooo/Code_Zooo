@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+      div {
+        width:200px;
+        height:200px;
+        margin:50px;
+        background-color:orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="dis"></h1>
+    <div id="dip"></div>
+    <script>
+        var x = 0;
+        document.body.addEventListener('keypress',function(userChoice) {
+        var key = userChoice.keyCode;
+        if (key == 97) { //left
+          x--;
+          var y = x;
+          if (y === 360) {
+            x = 0;
+          }
+          else if (y === -1) {
+            x = 360;
+          }
+          document.getElementById('dis').innerHTML = x;
+          document.getElementById('dip').style.transform = "rotate(" + x + "deg)";
+        }
+        if (key == 100) { //right
+          x++;
+          var y = x;
+          if (y === 360) {
+            x = 0;
+          }
+          else if (y === -1) {
+            x = 360;
+          }
+          document.getElementById('dis').innerHTML = x;
+          document.getElementById('dip').style.transform = "rotate(" + x + "deg)";
+        }
+        });
+        
+    </script>
+  </body>
+  
+</html>
