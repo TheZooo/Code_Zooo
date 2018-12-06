@@ -1,11 +1,29 @@
 <html>
-  <body onclick="cease()">
-    <p id="para">Hello</p>
+  <body >
+    <h1 id="para" ondblclick="cease()">Light Off</h1>
+    <style>
+      body {
+        background-color:black;
+      }
+      h1 {
+        color:white;
+      }
+    </style>
     <script>
-      var x = 0;
+      var x = false;
       function cease() {
-          
-          document.getElementById("para").innerHTML = "STOP IT";
+        if (x === false) {
+          document.getElementById('para').innerHTML = "Light On";
+          document.getElementById('para').style.color = "black";
+          document.body.style.backgroundColor = "white";
+          x = true;
+        }
+        else {
+          document.getElementById('para').innerHTML = "Light Off";
+          document.getElementById('para').style.color = "white";
+          document.body.style.backgroundColor = "black";
+          x = false;
+        }
       }
     </script>
   </body>
