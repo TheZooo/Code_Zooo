@@ -1,0 +1,52 @@
+<html>
+  <body>
+    <h1>Type in Username::</h1>
+    <input type="text" id="inU" onfocus="remindA()" onblur="compA()">
+    <h1>Type in Password::</h1>
+    <input type="text" id="inP" onfocus="remindB()" onblur="compB()">
+    <p id="dis"></p>
+    <script>
+      var d = document
+      var username = d.getElementById('inU');
+      var password = d.getElementById('inP');
+      var display = d.getElementById('dis');
+      var userChek = false;
+      var passChek = false;
+      localStorage.clear();
+      
+      function remindA() {
+          display.innerHTML = "Enter username (Press Tab once done)";
+      }
+      function compA() {
+          display.innerHTML = "";
+          if (username.value != "") {
+            userChek = true;
+          }
+          else {
+            userChek = false;
+          }
+      }
+      function remindB() {
+          display.innerHTML = "Enter 12 digit password (Press Tab once COMPLETELY complete)";
+      }
+      function compB() {
+          display.innerHTML = "";
+          if (password.value != "") {
+            passChek = true;
+          }
+          else {
+            passChek = false;
+          }
+          if (userChek === true && passChek === true) {
+            localStorage.setItem("username", username.value);
+            localStorage.setItem("password", password.value);
+            location.href = "focusEventB.html";
+          }
+          else {
+            display.innerHTML = "You have no input in one or two of the boxes";
+            localStorage.clear();
+          }
+      }
+    </script>
+  </body>
+</html>

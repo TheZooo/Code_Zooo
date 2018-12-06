@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <h1 id="username"></h1>
+    <h1 id="password"></h1>
+    <button onclick="goback()">Go Back to Start</button>
+    <script>
+      var x = localStorage.getItem("username");
+      var y = localStorage.getItem("password");
+      document.getElementById('username').innerHTML = "Username: " + x;
+      document.getElementById('password').innerHTML = "Password: " + y;
+      localStorage.clear();
+      function goback() {
+        location.href = "focusEvent.html";
+      }
+    </script>
+  </body>
+</html>
