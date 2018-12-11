@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <style>
+      div {
+        width:150px;
+        height:150px;
+        float:left;
+        background-color:gray;
+        margin-left:5px;
+        margin-top:5px;
+        font-size:50px;
+        text-align:center;
+      }
+      button {
+        margin-left:5px;
+        margin-top:5px;
+      }
+      #dis {
+        float:right;
+      }
+      
+    </style>
+  </head>
+  <body onload="start()">
+    <div id="scratchA" onmouseover="scraA()"></div>
+    <div id="scratchB" onmouseover="scraB()"></div>
+    <div id="scratchC" onmouseover="scraC()"></div>
+    <button id="rigbttn" onclick="rig()">Rig the Scratchcard</button>
+    <h1 id="dis"></h1><br><br>
+    <h1 id="result">Scratch the Boxes!</h1>
+    
+    <script>
+      var opacityA = 1;
+      var opacityB = 1;
+      var opacityC = 1;
+      var boxA = document.getElementById('scratchA');
+      var boxB = document.getElementById('scratchB');
+      var boxC = document.getElementById('scratchC');
+      var x = 7;//Math.floor(Math.random() * 10);
+      var y = 7;//Math.floor(Math.random() * 10);
+      var z = 7;//Math.floor(Math.random() * 10);
+      var chekA = false;
+      var chekB = false;
+      var chekC = false;
+      var randA = Math.floor(Math.random() * 10);
+      var randB = Math.floor(Math.random() * 10);
+      var randC = Math.floor(Math.random() * 10);
+
+      function start() {
+        document.getElementById('dis').innerHTML = "Winning Numbers: " + x + " " + y + " " + z;
+      }
+      
+      function scraA() {
+        if (opacityA >= 0.5) {
+          opacityA = opacityA - 0.1;
+          boxA.style.backgroundColor = "rgba(128, 128, 128," + opacityA + ")";
+        }
+        else if (chekA === false) {
+          chekA = true;
+          boxA.innerHTML = randA;
+        }
+        if (chekA === true && chekB === true && chekC === true && randA === x && randB === y && randC === z) {
+          document.getElementById('result').innerHTML = "WWWIIIIIINNNNNNEEEERRRR!!!";
+        }
+        else if (chekA === true && chekB === true && chekC === true) {
+          document.getElementById('result').innerHTML = "Nope, refresh";
+        }
+      }
+      
+      function scraB() {
+        if (opacityB >= 0.5) {
+          opacityB = opacityB - 0.1;
+          boxB.style.backgroundColor = "rgba(128, 128, 128," + opacityB + ")";
+        }
+        else if (chekB === false) {
+          chekB = true;
+          boxB.innerHTML = randB;
+        }
+        if (chekA === true && chekB === true && chekC === true && randA === x && randB === y && randC === z) {
+          document.getElementById('result').innerHTML = "WWWIIIIIINNNNNNEEEERRRR!!!";
+        }
+        else if (chekA === true && chekB === true && chekC === true) {
+          document.getElementById('result').innerHTML = "Nope, refresh";
+        }
+      }
+      
+      function scraC() {
+        if (opacityC >= 0.5) {
+          opacityC = opacityC - 0.1;
+          boxC.style.backgroundColor = "rgba(128, 128, 128," + opacityC + ")";
+        }
+        else if (chekC === false) {
+          chekC = true;
+          boxC.innerHTML = randC;
+        }
+        if (chekA === true && chekB === true && chekC === true && randA === x && randB === y && randC === z) {
+          document.getElementById('result').innerHTML = "WWWIIIIIINNNNNNEEEERRRR!!!";
+        }
+        else if (chekA === true && chekB === true && chekC === true) {
+          document.getElementById('result').innerHTML = "Nope, refresh";
+        }
+      }
+      
+      function rig() {
+        if (chekA === false && chekB === false && chekC === false) {
+          randA = 7;
+          randB = 7;
+          randC = 7;
+        }
+        else {
+          document.getElementById('rigbttn').innerHTML = "You can't rig it now";
+        }
+      }
+    </script>
+  </body>
+</html>
